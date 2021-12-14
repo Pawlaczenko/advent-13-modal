@@ -1,0 +1,121 @@
+.overlay {
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0,0,0,.45);
+
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(25px);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    
+    width: 60%;
+    max-height: 85vh;
+    padding: 75px 95px;
+    
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,.45);
+
+    display: grid;
+    column-gap: 80px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 60% 30% 10%;
+    grid-template-areas:
+        "heading image"
+        "paragraphs image"
+        "button image";
+}
+
+.heading {
+    grid-area: heading;
+
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-size: clamp(2rem, 5vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -.5px;
+    line-height: .9;
+
+    padding: 0;
+    margin: 0 0 50px;
+}
+
+.paragraphs {
+    grid-area: paragraphs;
+    overflow: scroll;
+    margin-bottom: 10px;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.125rem;
+        font-size: clamp(0.5rem, 1rem, 1.125rem);
+        line-height: 1.5;
+        
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+.button {
+    grid-area: button;
+
+    background-color: var(--gold);
+    color: black;
+    border-radius: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 100%;
+    padding: 20px;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: #3452a5;
+        color: var(--gold);
+    }
+
+}
+
+.imageContainer {
+    grid-area: image;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+}

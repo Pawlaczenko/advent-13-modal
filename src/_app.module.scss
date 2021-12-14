@@ -1,0 +1,38 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+svg circle.dot {
+    fill: var(--pink);
+    position: relative;
+}
+
+.anchor:hover .dotBig {
+    animation-name: beacon;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes beacon {
+    0% {
+      r: 22;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      r: 50;
+      opacity: 0;
+    }
+  }
